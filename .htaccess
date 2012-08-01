@@ -1,0 +1,25 @@
+# utilize codificação utf-8 para qualquer coisa servida como text/plain ou text/html
+AddDefaultCharset utf-8
+ 
+# força utf-8 para alguns formatos de arquivo
+AddCharset utf-8 .html .css .js .xml .json .rss .atom
+AddType application/x-httpd-php phar
+
+<IfModule mod_rewrite.c>
+
+ RewriteEngine On
+ 
+ # Reescreve "www.domain.com -> domain.com"
+ RewriteCond %{HTTPS} !=on
+ RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+ RewriteRule ^ http://%1%{REQUEST_URI} [R=301,L]
+ 
+ # Bloqueia o acesso aos diretórios "ocultos" cujos nomes iniciam com um ponto periódico.
+ # Isso inclui diretórios usados por sistemas controladores de versões como o Subversion ou Git.
+ RewriteRule "(^|/)\." - [F]
+
+ RewriteCond %{REQUEST_FILENAME} !-d
+ RewriteCond %{REQUEST_FILENAME} !-f
+ RewriteRule ^(.*)$ index.php/$1 [QSA,L]
+
+</IfModule>
