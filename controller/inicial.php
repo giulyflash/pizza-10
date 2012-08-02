@@ -6,7 +6,7 @@ class Inicial {
 	function index(){ 
 		//Setando os recursos listados. 
 		//TODO: fazer configurador na página para setar os recursos pelo próprio usuário (criar/editar/apagar).
-		$recursos = array('app');
+		$recursos = array('file1');
 		$msg = '';
 		
 		//Checando se o comando "run" foi solicitado
@@ -19,7 +19,7 @@ class Inicial {
 								'r'=>'checked',
 								'z'=>'checked');
 			}
-		}else{
+		}else{ o::pt($_POST);
 			//RODANDO o conversor
 			include LIB.'makephar.php';
 			//formatando os dados que vieram do post

@@ -6,7 +6,7 @@ class Teste {
 		//o::go('inicialize');	
 		
 		_cfg::loadConfig('app');
-		exit(o::pt(_cfg));
+		exit(o::pt(_cfg::this()));
 		
 	}
 	

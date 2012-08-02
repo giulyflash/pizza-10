@@ -264,7 +264,7 @@ class Loader
 		$file = CTRL.$config.'.ini';
 		
 		if(file_exists($file)){
-			self::this()->fileIni;
+			self::$fileIni;
 			$a = parse_ini_file($file);
 			foreach($a as $k=>$v){
 				self::this()->$k = $v;				
