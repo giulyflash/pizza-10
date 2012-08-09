@@ -1,0 +1,32 @@
+<IfModule mod_rewrite.c>
+	Options +FollowSymlinks
+	RewriteEngine On
+	
+	# Reescreve "www.domain.com -> domain.com"
+	RewriteCond %{HTTPS} !=on
+	RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+	RewriteRule ^ http://%1%{REQUEST_URI} [R=301,L]
+	
+	# Bloqueia o acesso aos diretórios "ocultos" cujos nomes iniciam com um ponto periódico.
+	# Isso inclui diretórios usados por sistemas controladores de versões como o Subversion ou Git.
+	RewriteRule "(^|/)\." - [F]
+	
+	RewriteCond %{REQUEST_FILENAME} -s [OR]
+	RewriteCond %{REQUEST_FILENAME} -l [OR]
+	RewriteCond %{REQUEST_FILENAME} -d
+	RewriteRule ^.*$ - [NC,L]
+	RewriteRule ^.*$ index.php [NC,L]	
+</IfModule>
+
+Options -MultiViews
+Options -Indexes
+
+ErrorDocument 404 /404.html
+ErrorDocument 500 /500.html
+
+# utilize codificação utf-8 para qualquer coisa servida como text/plain ou text/html
+AddDefaultCharset utf-8
+ 
+# força utf-8 para um número de formatos de arquivo
+AddCharset utf-8 .html .css .js .xml .json .rss .atom
+AddType application/x-httpd-php phar
