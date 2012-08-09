@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>MAKEPHAR :: Conversor PHP Arquive</title>
+<link rel="shortcut icon" href="<?php echo BASE;?>public/img/favicon.ico">
+<link href="<?php echo BASE;?>public/css/screen.css" rel="stylesheet" type="text/css" >
+<link href="<?php echo BASE;?>public/css/media.css" rel="stylesheet" type="text/css" media="only screen and (min-width:200px) and (max-width:320px)">
+<script type="text/javascript" src="<?php echo BASE;?>public/js/jquery.js"></script>
+<script type="text/javascript" src="<?php echo BASE;?>public/js/phar.js"></script>
+</head>
+
+<body>
+	<div class="container">
+		<h1>MAKEPHAR</h1>
+		<?php if($msg != '') echo $msg;?>
+
+        <form action="<?php echo BASE;?>phar" method="post">
+		<?php echo $listagem;?>
+			<p>
+            	<input name="add" id="add" type="button" value="Adicionar" title="adicionar novo recurso a ser convertido." />
+            	<input name="run" type="submit" value="Executar a Converção" <?php echo $noRun;?> />
+           	</p>
+        </form>
+	</div>
+    <div class="license">&copy; MAKEPHAR - by Paulo R. B. Rocha - <a href="mailto: prbr@ymail.com">prbr@ymail.com</a> - (+55 21) 3630-5920 - <span>É PROIBIDA A COMERCIALIZAÇÃO E DISTRIBUIÇÃO POR QUALQUER MEIO, MODIFICAÇÕES, ALTERAÇÕES E SER USADO COMO BASE OU PARTE DE OUTRO SISTEMA/SOFTWARE SEM A DIVULGAÇÃO DESTE TEXTO TITULADO COMO LIÇENCA, NOME E DADOS DE CONTATO DO AUTOR NO MESMO SUPORTE OU MIDIA.</span>.
+    </div>
+</body>
+</html>

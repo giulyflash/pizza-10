@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>NEOS PHP Framework</title>
+<script>
+function xdiv(e,id){
+	var a = document.getElementById(id)
+	if(a.style.display == '' || a.style.display == 'none'){
+		e.value = '-'
+		a.style.display = 'block'}
+	else{
+		e.value = '+'
+		a.style.display = 'none'}
+}
+</script>
+<style>
+*{margin:0; padding:0; font-family:Tahoma, Arial, Geneva, sans-serif; font-size:11px; color:#555}
+body {background:#333; text-align:center}
+
+h1 { font-size:46px; margin:-90px 0 50px 0; font-weight:bold; color:#FFF}
+h2 { font-size:22px; margin:0 0 10px 0; font-weight:normal; color:#000}
+h3 { font-size:14px; margin:20px 0 10px 0; font-weight:normal}
+input[type=button] {cursor:pointer; font-size:9px; border:1px solid #EEE; border-left:1px solid #666; border-right:1px solid #666;  width:20px;  background:#FFF !important}
+ul, ol { padding:5px 40px; font-size:11px}
+code { white-space:pre-wrap !important; font-family:"Courier New", Courier, monospace; padding:5px 10px; margin:10px 0; font-size:12px; display:block; background:#EEE; color:#030; border:1px solid #CCC}
+small { color:#999}
+/*tbody tr:nth-child(even) td, tbody tr.even td {background:#EEF;}
+*/
+.container { margin:0 auto 20px auto; text-align:left; padding:30px 50px; min-width:600px; width:900px; background:#FFF; border:1px solid #DDD; border-bottom-right-radius:30px; border-bottom:30px solid #CCC; border-top:60px solid #CCC}
+
+div#msg,
+div#ajuda,
+#trace,
+div.att { margin:20px 0 60px 0}
+
+.att { margin:50px 0 !important; border:1px dashed #999 !important; padding:10px;}
+.att * { font-size:10px;color:#666}
+
+#msg { margin:10px 0; color:#933}
+#msg * { padding:2px 0 0 0; font-size:10.5px}
+
+#ajuda { margin:10px 0; color:#050}
+
+#trace { margin:10px 0; font-size:11px; color:#333; width:100%}
+#trace th { color:#FFF; background:#000; text-align:left; padding:3px 8px; font-weight:bold}
+#trace tr td { padding:3px 8px; color:#666; font-family:Courier, monospace; word-break:break-all; border-bottom:1px solid #DDD}
+#trace tr:last-child td { background:#F00; color:#FFF}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>NEOS PHP Framework</h1>
