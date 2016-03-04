@@ -1,0 +1,2 @@
+Desenvolvimento de um projeto de venda de pizzas em site e entrega a domicílio. Relação com clientes, cardápios, gerenciamento de pedidos, logística, etc.
+Projeto desenvolvido com o framework NEOS (http://code.google.com/p/neos-php-framework/)
